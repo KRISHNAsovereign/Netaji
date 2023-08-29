@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+{% load static %}
+{% include 'header.html' %}
+    <head>
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100vh;
+                    margin: 0;
+                    padding: 0;
+                    background-color: #D4F1F9;
+                    color: #333;
+                }
+
+
+                body.dark-mode {
+                    background-color: #1b1b1b;
+                    color: #f5f5f5;
+                }
+
+                .toggle-dark-mode {
+                    background-color: #1b2945;
+                    color: #f5f5f5;
+                    border: none;
+                    padding: 10px 20px;
+                    margin-right: 15px;
+                    cursor: pointer;
+                    font-size: 16px;
+                    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Add background color transition */
+                }
+
+                .toggle-dark-mode:hover {
+                    background-color: #000;
+                }
+
+                body.dark-mode .toggle-dark-mode {
+                    background-color: #000; /* Change background color in dark mode */
+                    color: #f5f5f5; /* Change color in dark mode */
+                }
+                .block-container {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    margin-top: 70px;
+                    max-width: auto; /* Adjust as needed */
+                }
+
+                body.dark-mode .block-container{
+                background-color: #000;
+                color: #f5f5f5;
+                }
+
+                .block {
+                    width: 150px;
+                    height: 100px;
+                    background: rgba(19, 126, 194, 1);
+                    text-shadow: 5px 4px 5px #00305b;
+                    margin: 60px; /* Increased gap between blocks */
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 18px; /* Larger font size */
+                    color: #fff;
+                    cursor: pointer;
+                    transition: background-color 0.3s ease;
+                    border-radius: 20px;
+                }
+
+                .block:hover {
+                    background-color: #e74c3c;
+                }
+
+                /* Text that appears on hover */
+                .block:hover::before {
+                    content: "!";
+                    font-size: 20px; /* Larger font size */
+                }
+                footer {
+                background-color: #1b2945;
+                color: white;
+                text-align: center;
+                position: sticky;
+                bottom: auto; /* Position the footer at the bottom of the viewport */
+                width: 100%
+                }
+
+            </style>
+    </head>
+    <body class="course-page">
+        <div class="block-container">
+            <a href="{% url 'class_page' 'Class Nursery' %}"  class="block">Nursery</a>
+            <a href="{% url 'class_page' 'Class LKG' %}"  class="block">LKG Class</a>
+            <a href="{% url 'class_page' 'Class UKG' %}"  class="block">UKG Class</a>
+            <a href="{% url 'class_page' '1st Class' %}"  class="block">1st Class</a>
+            <a href="{% url 'class_page' '2nd Class' %}"  class="block">2nd Class</a>
+            <a href="{% url 'class_page' '3rd Class' %}"  class="block">3rd Class</a>
+            <a href="{% url 'class_page' '4th Class' %}"  class="block">4th Class</a>
+            <a href="{% url 'class_page' '5th Class' %}"  class="block">5th Class</a>
+            <a href="{% url 'class_page' '6th Class' %}"  class="block">6th Class</a>
+            <a href="{% url 'class_page' '7th Class' %}"  class="block">7th Class</a>
+            <a href="{% url 'class_page' '8th Class' %}"  class="block">8th Class</a>
+            <a href="{% url 'class_page' '9th Class' %}"  class="block">9th Class</a>
+            <a href="{% url 'class_page' '10th Class' %}"  class="block">10th Class</a>
+
+        </div>
+    </body>
+    <footer>
+        <p>&copy; 2023 NBV School. All rights reserved.</p>
+    </footer>
+</html>
+

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+        <body>
+                {% include 'header.html' %}
+                <main>
+<!--            Web developed by Developer Krishna Chongala-->
+                    <div class="carousel">
+                                <img src="{%static 'img/main.jpg'%}" alt="Image 1" class="active">
+                                <img src="{%static 'img/ground.jpg'%}" alt="Image 2">
+                                <img src="{%static 'img/central3.jpg'%}" alt="Image 3">
+                    </div>
+                    <div class="carousel-controls">
+                            <button class="prev-button" onclick="prevImage()">&#10094;</button>
+                            <button class="next-button" onclick="nextImage()">&#10095;</button>
+                    </div>
+                    <section class="intro">
+                        <div class="marquee">
+                            <marquee direction="left" behavior="scroll" scrollamount="5">
+                                  <h2>Welcome to NBV School, where we provide quality education...</h2>
+                            </marquee>
+                        </div>
+                             <div class="vertical-space"></div>
+                             <div class="person-cards-container">
+                                <div class="person-card">
+                                    <div class="person-image">
+                                          <img src="{% static 'img/dad.png' %}" alt="Person 1">
+                                    </div>
+                                    <div class="person-details">
+                                        <h2>Chongala Haranadh</h2>
+                                        <p>Head Master </p>
+                                        <p>M.A., B.Ed., CTTC </p>
+                                        <a href="aboutus">Learn more...</a>
+                                    </div>
+                                </div>
+                                <div class="person-card">
+                                    <div class="person-details">
+                                        <h2>Chongala Ramana</h2>
+                                        <p>Principle </p>
+                                        <p>M.A., B.Ed </p>
+                                        <a href="aboutus">Learn more...</a>
+                                    </div>
+                                    <div class="person-image2">
+                                          <img src="{% static 'img/mom.png' %}" alt="Person 1">
+                                    </div>
+                                </div>
+                             </div>
+                             <div class="vertical-space"></div>
+                            <section class="our-fraternity-section">
+                                    <h2 class="fraternity-heading">Our Fraternity</h2>
+
+                                    <div class="fraternity-info-box">
+                                        <ul class="fraternity-list">
+                                            <li>
+                                                <h2>99%</h2>
+                                                <h6>Pass Percentage</h6>
+                                            </li>
+                                            <li>
+                                                <h2>20+</h2>
+                                                <h6>Rooms</h6>
+                                            </li>
+                                            <li>
+                                                <h2>25+</h2>
+                                                <h6>Employees</h6>
+                                            </li>
+                                            <li>
+                                                <h2>550+ </h2>
+                                                <h6>Students</h6>
+                                            </li>
+                                            <li>
+                                                <h2> 25+ </h2>
+                                                <h6>Years</h6>
+                                            </li>
+                                        </ul>
+                                    </div>
+                            </section>
+
+                            <div class="container">
+                                    <div class="person-album-container">
+                                        <div class="person-album">
+                                            <div class="person-album-image">
+                                                <img src="{% static 'img/NL.jpg' %}" alt="Person's Photo">
+                                            </div>
+                                            <div class="person-album-details">
+                                                <h2>Leadership is action, not position</h2>
+                                            </div>
+                                        </div>
+                                        <div class="person-album">
+                                            <div class="person-album-image">
+                                                <img src="{% static 'img/both.jpg' %}" alt="Person's Photo">
+                                            </div>
+                                            <div class="person-album-details">
+                                                <h3>Hard work that goes into academic excellence!</h3>
+                                            </div>
+                                        </div>
+                                        <div class="person-album">
+                                            <div class="person-album-image">
+                                                <img src="{% static 'img/stage.jpg' %}" alt="Person's Photo">
+                                            </div>
+                                            <div class="person-album-details">
+                                                <h2>Centre for Excellence</h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                             </div>
+                    </section>
+        <!--            <div class="scrolling-container">-->
+        <!--                <div class="scrolling-content">-->
+        <!--                 <img src="{%static 'img/marquee1.jpg'%}" alt="Scrolling Image">-->
+        <!--                 <img src="{%static 'img/marquee1.jpg'%}" alt="Scrolling Image">-->
+        <!--                </div>-->
+        <!--            </div>-->
+                    <marquee direction="left" behavior="scroll" scrollamount="5">
+                         <img src="{%static 'img/marquee1.jpg'%}" alt="Scrolling Image">
+                         <img src="{%static 'img/marquee1.jpg'%}" alt="Scrolling Image">
+                         <img src="{%static 'img/marquee1.jpg'%}" alt="Scrolling Image">
+                    </marquee>
+                </main>
+        </body>
+{% include 'footer.html' %}
+</html>

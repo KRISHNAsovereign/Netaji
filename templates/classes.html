@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+    <head>
+        <style>
+        /* Style for the Go Back button */
+        button {
+          padding: 10px 20px;
+          background-color: #007bff;
+          color: #fff;
+          border: none;
+          cursor: pointer;
+          margin-right: 15px;
+          font-size: 16px;
+          border-radius: 5px;
+          transition: background-color 0.3s ease-in-out;
+        }
+
+        button:hover {
+          background-color: #0056b3;
+        }
+
+            footer {
+                background-color: #1b2945;
+                color: white;
+                text-align: center;
+                position: absolute;
+                bottom: auto; /* Position the footer at the bottom of the viewport */
+                width: 100%;
+    <!--            margin-top: 480px;-->
+            }
+
+            .subject-list {
+                list-style: none;
+                display: flex;
+                flex-wrap: wrap;
+                padding: 10px;
+                margin-bottom: 320px;
+                transition: transform 0.5s ease-in-out;
+            }
+
+            .subject-list :hover {
+              transform: scale(1.1);
+            }
+            .subject-item {
+                width: calc(33.33% - 20px);
+                margin: 10px;
+                text-align: center;
+                background-color: #fff;
+                border-radius: 5px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+
+            .subject-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 20px;
+            }
+
+            .subject-logo img {
+                max-width: 100px;
+                height: auto;
+            }
+
+            .subject-name {
+                font-size: 16px;
+                font-weight: bold;
+                color: #333;
+                margin-top: 10px;
+            }
+
+            h1 {
+                  margin-left: 15px;
+                        font-family: 'Brush Script', cursive;
+                      }
+
+            h2 {
+                        font-family: 'Brush Script', cursive;
+                      }
+
+        </style>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>NBV School</title>
+    <!--    <link rel="stylesheet" href= "static/css/carousel.css">-->
+        <script src="{%static 'js/carousel.js' %}" ></script>
+    </head>
+        <header class="header">
+            <a href="/"><img src="{%static 'img/logo.png'%}" alt="Logo" class="logo"></a>
+             <nav class="nav-links">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><button id="goBackButton">Go Back</button></li>
+<!--                        <li><a href="sections">Courses</a></li>-->
+                    </ul>
+             </nav>
+        </header>
+        <head>
+            <div class="vertical-space"></div>
+            <div class="vertical-space"></div>
+            <div class="vertical-space"></div>
+        <title>{{ class_name }}</title>
+                <!-- In your HTML template -->
+            <link rel="stylesheet" type="text/css" href="{% static 'css/carousel.css' %}">
+            </head>
+                <h1>{{ class_name }}</h1>
+
+            <body class="cl-page">
+              <div class="block-container">
+                  <ul class="subject-list">
+                        {% for subject in subjects %}
+                        <li class="subject-item">
+                            <div class="subject-content">
+                                <div class="subject-logo">
+                                    {% if subject.logo %}
+                                    <img src="{{ subject.logo.url }}" alt="{{ subject.subject_name }}" class="logo-image">
+                                    {% else %}
+                                    No logo available
+                                    {% endif %}
+                                </div>
+                                <h2 class="subject-name">{{ subject.subject_name }}</h2>
+                            </div>
+                        </li>
+                        {% endfor %}
+                  </ul>
+                    <script>
+                      const goBackButton = document.getElementById("goBackButton");
+                      goBackButton.addEventListener("click", function() {
+                        history.back();
+                      });
+                    </script>
+    <!--            <ul>-->
+    <!--                {% for subject in subjects %}-->
+    <!--                <li>-->
+    <!--&lt;!&ndash;                    {{ subject.name }}&ndash;&gt;-->
+    <!--                    {% if subject.logo %}-->
+    <!--                    <img src="{{ subject.logo.url }}" alt="{{ subject.subject_name }}" class="logo-image">-->
+    <!--                    <h3 class="subject_name">{{ subject.subject_name }}</h3>-->
+    <!--                    {% else %}-->
+    <!--                    No logo available-->
+    <!--                    {% endif %}-->
+    <!--                </li>-->
+    <!--                {% endfor %}-->
+    <!--            </ul>-->
+              </div>
+            </body>
+    {% include 'footer.html' %}
+
+</html>
+
