@@ -30,7 +30,7 @@ class Event(models.Model):
 class EventImage(models.Model):
 
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
-    images=models.ImageField(upload_to='event_img/', default="cmsNvsd_kjzx_jdn", null=True, blank=True)
+    images=models.ImageField(upload_to='event_img/', null=True, blank=True)
 
     def __str__(self):
         return f"Image for {self.event.title}"
